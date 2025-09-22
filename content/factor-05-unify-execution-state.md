@@ -1,17 +1,17 @@
-[← Back to README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
 
-### 5. Unify execution state and business state
+### 5. 統一執行狀態與業務狀態
 
-Even outside the AI world, many infrastructure systems try to separate "execution state" from "business state". For AI apps, this might involve complex abstractions to track things like current step, next step, waiting status, retry counts, etc. This separation creates complexity that may be worthwhile, but may be overkill for your use case. 
+即使在 AI 世界之外，許多基礎設施系統都試圖將「執行狀態」與「業務狀態」分離。對於 AI 應用程式來說，這可能涉及複雜的抽象來追蹤諸如當前步驟、下一步驟、等待狀態、重試次數等事項。這種分離會產生複雜性，雖然可能是值得的，但對於你的使用案例來說可能過於複雜。
 
-As always, it's up to you to decide what's right for your application. But don't think you *have* to manage them separately.
+一如既往，由你來決定什麼適合你的應用程式。但不要認為你*必須*分別管理它們。
 
-More clearly:
+更明確地說：
 
-- **Execution state**: current step, next step, waiting status, retry counts, etc. 
-- **Business state**: What's happened in the agent workflow so far (e.g. list of OpenAI messages, list of tool calls and results, etc.)
+- **執行狀態**：當前步驟、下一步驟、等待狀態、重試次數等。
+- **業務狀態**：到目前為止在 Agent 工作流程中發生的事情 (例如 OpenAI 訊息列表、工具呼叫和結果列表等)。
 
-If possible, SIMPLIFY - unify these as much as possible. 
+如果可能的話，簡化 - 盡可能統一這些狀態。 
 
 [![155-unify-state](https://github.com/humanlayer/12-factor-agents/blob/main/img/155-unify-state-animation.gif)](https://github.com/user-attachments/assets/e5a851db-f58f-43d8-8b0c-1926c99fc68d)
 
@@ -23,18 +23,18 @@ If possible, SIMPLIFY - unify these as much as possible.
 
 </details>
 
-In reality, you can engineer your application so that you can infer all execution state from the context window. In many cases, execution state (current step, waiting status, etc.) is just metadata about what has happened so far.
+實際上，你可以設計你的應用程式，讓你能夠從上下文視窗推斷出所有執行狀態。在許多情況下，執行狀態 (當前步驟、等待狀態等) 只是關於到目前為止發生了什麼的元資料。
 
-You may have things that can't go in the context window, like session ids, password contexts, etc, but your goal should be to minimize those things. By embracing [factor 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md) you can control what actually goes into the LLM 
+你可能有一些無法放入上下文視窗的內容，如會話 ID、密碼上下文等，但你的目標應該是盡量減少這些內容。透過採用[要素 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)，你可以控制實際進入 LLM 的內容
 
-This approach has several benefits:
+這種方法有幾個好處：
 
-1. **Simplicity**: One source of truth for all state
-2. **Serialization**: The thread is trivially serializable/deserializable
-3. **Debugging**: The entire history is visible in one place
-4. **Flexibility**: Easy to add new state by just adding new event types
-5. **Recovery**: Can resume from any point by just loading the thread
-6. **Forking**: Can fork the thread at any point by copying some subset of the thread into a new context / state ID
-7. **Human Interfaces and Observability**: Trivial to convert a thread into a human-readable markdown or a rich Web app UI
+1. **簡潔性**：所有狀態的唯一真實來源
+2. **序列化**：執行緒可以輕鬆序列化/反序列化
+3. **除錯**：整個歷史記錄在一個地方可見
+4. **靈活性**：只需添加新的事件類型即可輕鬆添加新狀態
+5. **恢復**：只需載入執行緒即可從任何點恢復
+6. **分叉**：可以透過將執行緒的某些子集複製到新的上下文/狀態 ID 中，在任何點分叉執行緒
+7. **人機介面和可觀測性**：可以輕鬆將執行緒轉換為人類可讀的 Markdown 或豐富的 Web 應用程式 UI
 
-[← Tools Are Structured Outputs](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) | [Launch/Pause/Resume →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)
+[← 工具是結構化輸出](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) | [啟動/暫停/恢復 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)
