@@ -5,7 +5,7 @@ means every time we wait for human approval, we sit in a loop
 polling until the human response if received.
 
 That's obviously not ideal, especially for production workloads,
-so in this section we'll implement [factor 6 - launch / pause / resume with simple APIs](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-6-launch-pause-resume.md)
+so in this section we'll implement [factor 6 - launch / pause / resume with simple APIs](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-6-launch-pause-resume.md)
 by updating the server to end processing after contacting a human, and use webhooks to receive the results. 
 
 

@@ -1,10 +1,10 @@
-[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/circleghost/12-factor-agents/blob/main/README.md)
 
 ### 4. 工具只是結構化輸出
 
 工具不需要複雜。在核心上，它們只是來自你的 LLM 的結構化輸出，觸發確定性程式碼。
 
-![140-tools-are-just-structured-outputs](https://github.com/humanlayer/12-factor-agents/blob/main/img/140-tools-are-just-structured-outputs.png)
+![140-tools-are-just-structured-outputs](https://github.com/circleghost/12-factor-agents/blob/main/img/140-tools-are-just-structured-outputs.png)
 
 例如，假設你有兩個工具 `CreateIssue` 和 `SearchIssues`。要求 LLM「使用幾個工具中的一個」就是要求它輸出我們可以解析為代表這些工具的物件的 JSON。
 
@@ -47,6 +47,6 @@ else: # ... 模型沒有呼叫我們知道的工具
 
 **注意**：關於「純粹提示」vs.「工具呼叫」vs.「JSON 模式」的好處以及各自的性能權衡已經有很多討論。我們很快會連結一些相關資源，但這裡不會深入討論。參見 [Prompting vs JSON Mode vs Function Calling vs Constrained Generation vs SAP](https://www.boundaryml.com/blog/schema-aligned-parsing)、[何時應該使用函數呼叫、結構化輸出或 JSON 模式？](https://www.vellum.ai/blog/when-should-i-use-function-calling-structured-outputs-or-json-mode#:~:text=We%20don%27t%20recommend%20using%20JSON,always%20use%20Structured%20Outputs%20instead) 和 [OpenAI JSON vs Function Calling](https://docs.llamaindex.ai/en/stable/examples/llm/openai_json_vs_function_calling/)。
 
-「下一步」可能不會像「運行純函數並返回結果」那樣原子化。當你將「工具呼叫」視為只是模型輸出描述確定性程式碼應該做什麼的 JSON 時，你會解鎖很多靈活性。將這與[要素 8 擁有你的控制流程](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)結合起來。
+「下一步」可能不會像「運行純函數並返回結果」那樣原子化。當你將「工具呼叫」視為只是模型輸出描述確定性程式碼應該做什麼的 JSON 時，你會解鎖很多靈活性。將這與[要素 8 擁有你的控制流程](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)結合起來。
 
-[← 擁有你的上下文視窗](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md) | [統一執行狀態 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)
+[← 擁有你的上下文視窗](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md) | [統一執行狀態 →](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)

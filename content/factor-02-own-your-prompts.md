@@ -1,10 +1,10 @@
-[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/circleghost/12-factor-agents/blob/main/README.md)
 
 ### 2. 擁有你的提示
 
 不要將你的提示工程外包給框架。
 
-![120-own-your-prompts](https://github.com/humanlayer/12-factor-agents/blob/main/img/120-own-your-prompts.png)
+![120-own-your-prompts](https://github.com/circleghost/12-factor-agents/blob/main/img/120-own-your-prompts.png)
 
 順便說一下，[這遠非新穎的建議：](https://hamel.dev/blog/posts/prompt/)
 
@@ -68,7 +68,7 @@ function DetermineNextStep(thread: string) -> DoneForNow | ListGitTags | DeployB
 
 (上面的例子使用 [BAML](https://github.com/boundaryml/baml) 來生成提示，但你可以使用任何你想要的提示工程工具，甚至只是手動模板化)
 
-如果簽名看起來有點奇怪，我們會在[要素 4 - 工具只是結構化輸出](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)中介紹
+如果簽名看起來有點奇怪，我們會在[要素 4 - 工具只是結構化輸出](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)中介紹
 
 ```typescript
 function DetermineNextStep(thread: string) -> DoneForNow | ListGitTags | DeployBackend | DeployFrontend | RequestMoreInformation {
@@ -88,4 +88,4 @@ function DetermineNextStep(thread: string) -> DoneForNow | ListGitTags | DeployB
 
 我不知道什麼是最好的提示，但我知道你希望能夠嘗試一切的靈活性。
 
-[← 自然語言到工具呼叫](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md) | [擁有你的上下文視窗 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)
+[← 自然語言到工具呼叫](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md) | [擁有你的上下文視窗 →](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)

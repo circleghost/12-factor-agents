@@ -1,4 +1,4 @@
-[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/circleghost/12-factor-agents/blob/main/README.md)
 
 ### 5. 統一執行狀態與業務狀態
 
@@ -13,19 +13,19 @@
 
 如果可能的話，簡化 - 盡可能統一這些狀態。 
 
-[![155-unify-state](https://github.com/humanlayer/12-factor-agents/blob/main/img/155-unify-state-animation.gif)](https://github.com/user-attachments/assets/e5a851db-f58f-43d8-8b0c-1926c99fc68d)
+[![155-unify-state](https://github.com/circleghost/12-factor-agents/blob/main/img/155-unify-state-animation.gif)](https://github.com/user-attachments/assets/e5a851db-f58f-43d8-8b0c-1926c99fc68d)
 
 
 <details>
-<summary><a href="https://github.com/humanlayer/12-factor-agents/blob/main/img/155-unify-state-animation.gif">GIF Version</a></summary>
+<summary><a href="https://github.com/circleghost/12-factor-agents/blob/main/img/155-unify-state-animation.gif">GIF Version</a></summary>
 
-![155-unify-state](https://github.com/humanlayer/12-factor-agents/blob/main/img/155-unify-state-animation.gif)
+![155-unify-state](https://github.com/circleghost/12-factor-agents/blob/main/img/155-unify-state-animation.gif)
 
 </details>
 
 實際上，你可以設計你的應用程式，讓你能夠從上下文視窗推斷出所有執行狀態。在許多情況下，執行狀態 (當前步驟、等待狀態等) 只是關於到目前為止發生了什麼的元資料。
 
-你可能有一些無法放入上下文視窗的內容，如會話 ID、密碼上下文等，但你的目標應該是盡量減少這些內容。透過採用[要素 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)，你可以控制實際進入 LLM 的內容
+你可能有一些無法放入上下文視窗的內容，如會話 ID、密碼上下文等，但你的目標應該是盡量減少這些內容。透過採用[要素 3](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)，你可以控制實際進入 LLM 的內容
 
 這種方法有幾個好處：
 
@@ -37,4 +37,4 @@
 6. **分叉**：可以透過將執行緒的某些子集複製到新的上下文/狀態 ID 中，在任何點分叉執行緒
 7. **人機介面和可觀測性**：可以輕鬆將執行緒轉換為人類可讀的 Markdown 或豐富的 Web 應用程式 UI
 
-[← 工具是結構化輸出](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) | [啟動/暫停/恢復 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)
+[← 工具是結構化輸出](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) | [啟動/暫停/恢復 →](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)

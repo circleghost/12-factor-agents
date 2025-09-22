@@ -1,17 +1,17 @@
-[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/circleghost/12-factor-agents/blob/main/README.md)
 
 ### 8. 擁有你的控制流程
 
 如果你擁有你的控制流程，你可以做很多有趣的事情。
 
-![180-control-flow](https://github.com/humanlayer/12-factor-agents/blob/main/img/180-control-flow.png)
+![180-control-flow](https://github.com/circleghost/12-factor-agents/blob/main/img/180-control-flow.png)
 
 
 建立適合你特定使用案例的自己的控制結構。具體來說，某些類型的工具呼叫可能是跳出迴圈並等待人類回應或另一個長時間運行任務 (如訓練管道) 的原因。你可能還想要整合自訂實作：
 
 - 工具呼叫結果的摘要或快取
 - 結構化輸出上的 LLM 作為評判者
-- 上下文視窗壓縮或其他[記憶體管理](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)
+- 上下文視窗壓縮或其他[記憶體管理](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)
 - 記錄、追蹤和指標
 - 客戶端限速
 - 持久睡眠/暫停/「等待事件」
@@ -79,6 +79,6 @@ def handle_next_step(thread: Thread):
 3. 給 Agent 存取權限去做更大、更有用的事情，然後只是隨機希望它不會搞砸
 
 
-你可能會注意到這與[要素 5 - 統一執行狀態與業務狀態](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)和[要素 6 - 使用簡單 API 進行啟動/暫停/恢復](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)密切相關，但可以獨立實作。
+你可能會注意到這與[要素 5 - 統一執行狀態與業務狀態](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)和[要素 6 - 使用簡單 API 進行啟動/暫停/恢復](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)密切相關，但可以獨立實作。
 
-[← 透過工具聯繫人類](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md) | [壓縮錯誤 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-09-compact-errors.md)
+[← 透過工具聯繫人類](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md) | [壓縮錯誤 →](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-09-compact-errors.md)

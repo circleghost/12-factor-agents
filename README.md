@@ -18,14 +18,14 @@ Deep Dive"></a>
 
 <p></p>
 
-*秉承 [十二要素應用程式](https://12factor.net/) 的精神*。*本專案的原始碼公開在 https://github.com/humanlayer/12-factor-agents，我歡迎你的回饋和貢獻。讓我們一起探索這個領域！*
+*秉承 [十二要素應用程式](https://12factor.net/) 的精神*。*本專案的原始碼公開在 https://github.com/circleghost/12-factor-agents，我歡迎你的回饋和貢獻。讓我們一起探索這個領域！*
 
 > [!TIP]
 > 錯過了 AI Engineer World's Fair？[觀看演講錄影](https://www.youtube.com/watch?v=8kMaTybvDUw)
 >
-> 想了解 Context Engineering？[直接跳到要素 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)
+> 想了解 Context Engineering？[直接跳到要素 3](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)
 >
-> 想為 `npx/uvx create-12-factor-agent` 貢獻？查看[討論串](https://github.com/humanlayer/12-factor-agents/discussions/61)
+> 想為 `npx/uvx create-12-factor-agent` 貢獻？查看[討論串](https://github.com/circleghost/12-factor-agents/discussions/61)
 
 
 <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=2acad99a-c2d9-48df-86f5-9ca8061b7bf9" />
@@ -54,56 +54,56 @@ Agents，至少是好的 agents，不會遵循[「這是你的提示詞，這是
 
 ## 簡短版本：十二要素
 
-即使 LLMs [持續以指數方式變得更強大](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md#what-if-llms-get-smarter)，仍然會有核心的工程技術能夠讓 LLM 驅動的軟體更可靠、更可擴展、更易於維護。
+即使 LLMs [持續以指數方式變得更強大](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md#what-if-llms-get-smarter)，仍然會有核心的工程技術能夠讓 LLM 驅動的軟體更可靠、更可擴展、更易於維護。
 
-- [我們如何走到這裡：軟體簡史](https://github.com/humanlayer/12-factor-agents/blob/main/content/brief-history-of-software.md)
-- [要素 1：自然語言到工具呼叫](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md)
-- [要素 2：擁有你的提示詞](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md)
-- [要素 3：擁有你的上下文視窗](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)
-- [要素 4：工具只是結構化輸出](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)
-- [要素 5：統一執行狀態與業務狀態](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)
-- [要素 6：用簡單的 APIs 啟動/暫停/恢復](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)
-- [要素 7：透過工具呼叫聯繫人類](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md)
-- [要素 8：擁有你的控制流程](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)
-- [要素 9：將錯誤壓縮到上下文視窗](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-09-compact-errors.md)
-- [要素 10：小型、專注的 Agents](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)
-- [要素 11：從任何地方觸發，在使用者所在的地方與他們相遇](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-11-trigger-from-anywhere.md)
-- [要素 12：讓你的 agent 成為無狀態的 reducer](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-12-stateless-reducer.md)
+- [我們如何走到這裡：軟體簡史](https://github.com/circleghost/12-factor-agents/blob/main/content/brief-history-of-software.md)
+- [要素 1：自然語言到工具呼叫](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md)
+- [要素 2：擁有你的提示詞](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md)
+- [要素 3：擁有你的上下文視窗](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)
+- [要素 4：工具只是結構化輸出](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)
+- [要素 5：統一執行狀態與業務狀態](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)
+- [要素 6：用簡單的 APIs 啟動/暫停/恢復](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)
+- [要素 7：透過工具呼叫聯繫人類](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md)
+- [要素 8：擁有你的控制流程](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)
+- [要素 9：將錯誤壓縮到上下文視窗](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-09-compact-errors.md)
+- [要素 10：小型、專注的 Agents](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)
+- [要素 11：從任何地方觸發，在使用者所在的地方與他們相遇](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-11-trigger-from-anywhere.md)
+- [要素 12：讓你的 agent 成為無狀態的 reducer](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-12-stateless-reducer.md)
 
 ### 視覺導航
 
 |    |    |    |
 |----|----|-----|
-|[![factor 1](https://github.com/humanlayer/12-factor-agents/blob/main/img/110-natural-language-tool-calls.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md) | [![factor 2](https://github.com/humanlayer/12-factor-agents/blob/main/img/120-own-your-prompts.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md) | [![factor 3](https://github.com/humanlayer/12-factor-agents/blob/main/img/130-own-your-context-building.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md) |
-|[![factor 4](https://github.com/humanlayer/12-factor-agents/blob/main/img/140-tools-are-just-structured-outputs.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) | [![factor 5](https://github.com/humanlayer/12-factor-agents/blob/main/img/150-unify-state.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md) | [![factor 6](https://github.com/humanlayer/12-factor-agents/blob/main/img/160-pause-resume-with-simple-apis.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md) |
-| [![factor 7](https://github.com/humanlayer/12-factor-agents/blob/main/img/170-contact-humans-with-tools.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md) | [![factor 8](https://github.com/humanlayer/12-factor-agents/blob/main/img/180-control-flow.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md) | [![factor 9](https://github.com/humanlayer/12-factor-agents/blob/main/img/190-factor-9-errors-static.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-09-compact-errors.md) |
-| [![factor 10](https://github.com/humanlayer/12-factor-agents/blob/main/img/1a0-small-focused-agents.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md) | [![factor 11](https://github.com/humanlayer/12-factor-agents/blob/main/img/1b0-trigger-from-anywhere.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-11-trigger-from-anywhere.md) | [![factor 12](https://github.com/humanlayer/12-factor-agents/blob/main/img/1c0-stateless-reducer.png)](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-12-stateless-reducer.md) |
+|[![factor 1](https://github.com/circleghost/12-factor-agents/blob/main/img/110-natural-language-tool-calls.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md) | [![factor 2](https://github.com/circleghost/12-factor-agents/blob/main/img/120-own-your-prompts.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md) | [![factor 3](https://github.com/circleghost/12-factor-agents/blob/main/img/130-own-your-context-building.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md) |
+|[![factor 4](https://github.com/circleghost/12-factor-agents/blob/main/img/140-tools-are-just-structured-outputs.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) | [![factor 5](https://github.com/circleghost/12-factor-agents/blob/main/img/150-unify-state.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md) | [![factor 6](https://github.com/circleghost/12-factor-agents/blob/main/img/160-pause-resume-with-simple-apis.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md) |
+| [![factor 7](https://github.com/circleghost/12-factor-agents/blob/main/img/170-contact-humans-with-tools.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md) | [![factor 8](https://github.com/circleghost/12-factor-agents/blob/main/img/180-control-flow.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md) | [![factor 9](https://github.com/circleghost/12-factor-agents/blob/main/img/190-factor-9-errors-static.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-09-compact-errors.md) |
+| [![factor 10](https://github.com/circleghost/12-factor-agents/blob/main/img/1a0-small-focused-agents.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md) | [![factor 11](https://github.com/circleghost/12-factor-agents/blob/main/img/1b0-trigger-from-anywhere.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-11-trigger-from-anywhere.md) | [![factor 12](https://github.com/circleghost/12-factor-agents/blob/main/img/1c0-stateless-reducer.png)](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-12-stateless-reducer.md) |
 
 ## 我們如何走到這裡
 
-想深入了解我的 agent 之旅以及是什麼讓我們走到這裡，請查看[軟體簡史](https://github.com/humanlayer/12-factor-agents/blob/main/content/brief-history-of-software.md) - 這裡是快速摘要：
+想深入了解我的 agent 之旅以及是什麼讓我們走到這裡，請查看[軟體簡史](https://github.com/circleghost/12-factor-agents/blob/main/content/brief-history-of-software.md) - 這裡是快速摘要：
 
 ### Agents 的承諾
 
 我們將大量討論有向圖 (DGs) 和它們的無環朋友 DAGs。我首先要指出的是...嗯...軟體就是一個有向圖。我們過去用流程圖來表示程式是有原因的。
 
-![010-software-dag](https://github.com/humanlayer/12-factor-agents/blob/main/img/010-software-dag.png)
+![010-software-dag](https://github.com/circleghost/12-factor-agents/blob/main/img/010-software-dag.png)
 
 ### 從程式碼到 DAGs
 
 大約 20 年前，我們開始看到 DAG 編排器變得流行。我們說的是像 [Airflow](https://airflow.apache.org/)、[Prefect](https://www.prefect.io/) 這樣的經典工具，一些前身，以及一些較新的工具如 ([dagster](https://dagster.io/)、[inggest](https://www.inngest.com/)、[windmill](https://www.windmill.dev/))。這些都遵循相同的圖形模式，但增加了可觀測性、模組化、重試、管理等好處。
 
-![015-dag-orchestrators](https://github.com/humanlayer/12-factor-agents/blob/main/img/015-dag-orchestrators.png)
+![015-dag-orchestrators](https://github.com/circleghost/12-factor-agents/blob/main/img/015-dag-orchestrators.png)
 
 ### Agents 的承諾
 
 我不是第一個[這樣說的人](https://youtu.be/Dc99-zTMyMg?si=bcT0hIwWij2mR-40&t=73)，但當我開始學習 agents 時，我最大的收穫是你可以拋棄 DAG。軟體工程師不用編碼每個步驟和邊緣情況，你可以給 agent 一個目標和一組轉換：
 
-![025-agent-dag](https://github.com/humanlayer/12-factor-agents/blob/main/img/025-agent-dag.png)
+![025-agent-dag](https://github.com/circleghost/12-factor-agents/blob/main/img/025-agent-dag.png)
 
 並讓 LLM 即時做決定來找出路徑
 
-![026-agent-dag-lines](https://github.com/humanlayer/12-factor-agents/blob/main/img/026-agent-dag-lines.png)
+![026-agent-dag-lines](https://github.com/circleghost/12-factor-agents/blob/main/img/026-agent-dag-lines.png)
 
 這裡的承諾是你寫更少的軟體，你只需要給 LLM 圖的「邊」，讓它來找出節點。你可以從錯誤中恢復，你可以寫更少的程式碼，你可能會發現 LLMs 為問題找到新穎的解決方案。
 
@@ -137,12 +137,12 @@ while True:
 
 這是一個多步驟的例子：
 
-[![027-agent-loop-animation](https://github.com/humanlayer/12-factor-agents/blob/main/img/027-agent-loop-animation.gif)](https://github.com/user-attachments/assets/3beb0966-fdb1-4c12-a47f-ed4e8240f8fd)
+[![027-agent-loop-animation](https://github.com/circleghost/12-factor-agents/blob/main/img/027-agent-loop-animation.gif)](https://github.com/user-attachments/assets/3beb0966-fdb1-4c12-a47f-ed4e8240f8fd)
 
 <details>
-<summary><a href="https://github.com/humanlayer/12-factor-agents/blob/main/img/027-agent-loop-animation.gif">GIF Version</a></summary>
+<summary><a href="https://github.com/circleghost/12-factor-agents/blob/main/img/027-agent-loop-animation.gif">GIF Version</a></summary>
 
-![027-agent-loop-animation](https://github.com/humanlayer/12-factor-agents/blob/main/img/027-agent-loop-animation.gif)
+![027-agent-loop-animation](https://github.com/circleghost/12-factor-agents/blob/main/img/027-agent-loop-animation.gif)
 
 </details>
 
@@ -194,27 +194,27 @@ while True:
 ## 十二要素 (再次)
 
 
-- [我們如何走到這裡：軟體簡史](https://github.com/humanlayer/12-factor-agents/blob/main/content/brief-history-of-software.md)
-- [要素 1：自然語言到工具呼叫](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md)
-- [要素 2：擁有你的提示詞](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md)
-- [要素 3：擁有你的上下文視窗](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)
-- [要素 4：工具只是結構化輸出](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)
-- [要素 5：統一執行狀態與業務狀態](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)
-- [要素 6：用簡單的 APIs 啟動/暫停/恢復](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)
-- [要素 7：透過工具呼叫聯繫人類](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md)
-- [要素 8：擁有你的控制流程](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)
-- [要素 9：將錯誤壓縮到上下文視窗](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-09-compact-errors.md)
-- [要素 10：小型、專注的 Agents](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)
-- [要素 11：從任何地方觸發，在使用者所在的地方與他們相遇](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-11-trigger-from-anywhere.md)
-- [要素 12：讓你的 agent 成為無狀態的 reducer](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-12-stateless-reducer.md)
+- [我們如何走到這裡：軟體簡史](https://github.com/circleghost/12-factor-agents/blob/main/content/brief-history-of-software.md)
+- [要素 1：自然語言到工具呼叫](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md)
+- [要素 2：擁有你的提示詞](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md)
+- [要素 3：擁有你的上下文視窗](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)
+- [要素 4：工具只是結構化輸出](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)
+- [要素 5：統一執行狀態與業務狀態](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)
+- [要素 6：用簡單的 APIs 啟動/暫停/恢復](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)
+- [要素 7：透過工具呼叫聯繫人類](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md)
+- [要素 8：擁有你的控制流程](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)
+- [要素 9：將錯誤壓縮到上下文視窗](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-09-compact-errors.md)
+- [要素 10：小型、專注的 Agents](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)
+- [要素 11：從任何地方觸發，在使用者所在的地方與他們相遇](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-11-trigger-from-anywhere.md)
+- [要素 12：讓你的 agent 成為無狀態的 reducer](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-12-stateless-reducer.md)
 
 ## 榮譽提及 / 其他建議
 
-- [要素 13：預取所有你可能需要的上下文](https://github.com/humanlayer/12-factor-agents/blob/main/content/appendix-13-pre-fetch.md)
+- [要素 13：預取所有你可能需要的上下文](https://github.com/circleghost/12-factor-agents/blob/main/content/appendix-13-pre-fetch.md)
 
 ## 相關資源
 
-- 在[這裡](https://github.com/humanlayer/12-factor-agents)為本指南做出貢獻
+- 在[這裡](https://github.com/circleghost/12-factor-agents)為本指南做出貢獻
 - [我在 2025 年 3 月的 Tool Use podcast 節目中談論了很多這些內容](https://youtu.be/8bIHcttkOTE)
 - 我在 [The Outer Loop](https://theouterloop.substack.com) 寫一些關於這些內容的文章
 - 我與 [@hellovai](https://github.com/hellovai) 一起舉辦[關於最大化 LLM 效能的網路研討會](https://github.com/hellovai/ai-that-works/tree/main)

@@ -1,10 +1,10 @@
-[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/circleghost/12-factor-agents/blob/main/README.md)
 
 ### 7. 透過工具呼叫聯繫人類
 
 預設情況下，LLM API 依賴於一個基本的高風險 token 選擇：我們是回傳純文字內容，還是回傳結構化資料？
 
-![170-contact-humans-with-tools](https://github.com/humanlayer/12-factor-agents/blob/main/img/170-contact-humans-with-tools.png)
+![170-contact-humans-with-tools](https://github.com/circleghost/12-factor-agents/blob/main/img/170-contact-humans-with-tools.png)
 
 你在第一個 token 的選擇上投入了很多權重，在 `the weather in tokyo` 案例中，它是
 
@@ -66,9 +66,9 @@ def webhook(req: Request):
   return {"status": "ok"}
 ```
 
-上述包含來自[要素 5 - 統一執行狀態與業務狀態](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)、[要素 8 - 擁有你的控制流程](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)、[要素 3 - 擁有你的上下文視窗](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)、[要素 4 - 工具就是結構化輸出](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) 以及其他幾個要素的模式。
+上述包含來自[要素 5 - 統一執行狀態與業務狀態](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)、[要素 8 - 擁有你的控制流程](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)、[要素 3 - 擁有你的上下文視窗](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)、[要素 4 - 工具就是結構化輸出](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) 以及其他幾個要素的模式。
 
-如果我們使用來自[要素 3 - 擁有你的上下文視窗](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)的 XML 格式，我們的上下文視窗在幾輪對話後可能看起來像這樣：
+如果我們使用來自[要素 3 - 擁有你的上下文視窗](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)的 XML 格式，我們的上下文視窗在幾輪對話後可能看起來像這樣：
 
 ```xml
 
@@ -118,12 +118,12 @@ def webhook(req: Request):
 2. **內部與外部迴圈**：啟用傳統 ChatGPT 風格介面**之外**的 Agent 工作流程，其中控制流程和上下文初始化可能是 `Agent->Human` 而不是 `Human->Agent` (想想由 cron 或事件啟動的 Agent)
 3. **多重人員存取**：可以透過結構化事件輕鬆追蹤和協調來自不同人員的輸入
 4. **多 Agent**：簡單的抽象可以輕鬆擴展以支援 `Agent->Agent` 請求和回應
-5. **持久性**：結合[要素 6 - 使用簡單 API 進行啟動/暫停/恢復](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)，這使得持久、可靠且可檢查的多人工作流程成為可能
+5. **持久性**：結合[要素 6 - 使用簡單 API 進行啟動/暫停/恢復](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)，這使得持久、可靠且可檢查的多人工作流程成為可能
 
 [更多關於外部迴圈 Agent 的資訊在這裡](https://theouterloop.substack.com/p/openais-realtime-api-is-a-step-towards)
 
-![175-outer-loop-agents](https://github.com/humanlayer/12-factor-agents/blob/main/img/175-outer-loop-agents.png)
+![175-outer-loop-agents](https://github.com/circleghost/12-factor-agents/blob/main/img/175-outer-loop-agents.png)
 
-與[要素 11 - 從任何地方觸發，在使用者所在的地方與他們會面](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-11-trigger-from-anywhere.md)搭配使用效果很好
+與[要素 11 - 從任何地方觸發，在使用者所在的地方與他們會面](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-11-trigger-from-anywhere.md)搭配使用效果很好
 
-[← 啟動/暫停/恢復](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md) | [擁有你的控制流程 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)
+[← 啟動/暫停/恢復](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md) | [擁有你的控制流程 →](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)

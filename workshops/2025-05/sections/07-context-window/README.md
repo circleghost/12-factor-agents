@@ -3,7 +3,7 @@
 In this section, we'll explore how to customize the context window
 of the agent.
 
-this is core to [factor 3 - own your context window](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-3-own-your-context-window.md)
+this is core to [factor 3 - own your context window](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-3-own-your-context-window.md)
 
 
 update the agent to pretty-print the Context window for the model

@@ -3,7 +3,7 @@
 In this section, we'll explore how to customize the prompt of the agent
 with reasoning steps.
 
-this is core to [factor 2 - own your prompts](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-2-own-your-prompts.md)
+this is core to [factor 2 - own your prompts](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-2-own-your-prompts.md)
 
 there's a deep dive on reasoning on AI That Works [reasoning models versus reasoning steps](https://github.com/hellovai/ai-that-works/tree/main/2025-04-07-reasoning-models-vs-prompts)
 

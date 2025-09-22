@@ -1,10 +1,10 @@
-[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/circleghost/12-factor-agents/blob/main/README.md)
 
 ### 1. 自然語言到工具呼叫
 
 在 Agent 建構中最常見的模式之一，就是將自然語言轉換為結構化的工具呼叫。這是一個強大的模式，讓你能夠建構可以對任務進行推理和執行的 Agent。
 
-![110-natural-language-tool-calls](https://github.com/humanlayer/12-factor-agents/blob/main/img/110-natural-language-tool-calls.png)
+![110-natural-language-tool-calls](https://github.com/circleghost/12-factor-agents/blob/main/img/110-natural-language-tool-calls.png)
 
 這個模式在原子化應用時，就是將這樣的語句進行簡單轉換：
 
@@ -30,7 +30,7 @@
 
 **注意**：實際上 Stripe API 要更複雜一些，一個[真正做這件事的 Agent](https://github.com/dexhorthy/mailcrew) ([影片](https://www.youtube.com/watch?v=f_cKnoPC_Oo)) 會列出客戶、列出產品、列出價格等，以使用正確的 ID 建構這個有效載荷，或者在提示/上下文視窗中包含這些 ID (我們稍後會看到這些其實是同一件事！)
 
-從這裡開始，確定性程式碼可以接收有效載荷並對其進行處理。(更多內容請參見[要素 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md))
+從這裡開始，確定性程式碼可以接收有效載荷並對其進行處理。(更多內容請參見[要素 3](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md))
 
 ```python
 # LLM 接收自然語言並返回結構化物件
@@ -59,4 +59,4 @@ else:  # 模型沒有呼叫我們知道的工具
 
 **但是**，我們實際上會跳過這個步驟，把它留給另一個要素，你可以選擇是否也要包含這個步驟 (由你決定！)
 
-[← 我們如何到達這裡](https://github.com/humanlayer/12-factor-agents/blob/main/content/brief-history-of-software.md) | [擁有你的提示 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md)
+[← 我們如何到達這裡](https://github.com/circleghost/12-factor-agents/blob/main/content/brief-history-of-software.md) | [擁有你的提示 →](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md)

@@ -146,6 +146,6 @@ while True:
 
 > #### 如果你已經知道你希望模型呼叫哪些工具，就直接確定性地呼叫它們，讓模型做困難的部分：弄清楚如何使用它們的輸出
 
-再次強調，AI 工程完全關乎[上下文工程](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)。
+再次強調，AI 工程完全關乎[上下文工程](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)。
 
-[← 無狀態化簡器](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-12-stateless-reducer.md) | [延伸閱讀 →](https://github.com/humanlayer/12-factor-agents/blob/main/README.md#related-resources)
+[← 無狀態化簡器](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-12-stateless-reducer.md) | [延伸閱讀 →](https://github.com/circleghost/12-factor-agents/blob/main/README.md#related-resources)

@@ -1,4 +1,4 @@
-[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/circleghost/12-factor-agents/blob/main/README.md)
 
 ### 3. 擁有你的上下文視窗
 
@@ -7,7 +7,7 @@
 > #### 在任何給定的時刻，你對 Agent 中 LLM 的輸入就是「到目前為止發生了什麼，下一步是什麼」
 
 <!-- todo syntax highlighting -->
-<!-- ![130-own-your-context-building](https://github.com/humanlayer/12-factor-agents/blob/main/img/130-own-your-context-building.png) -->
+<!-- ![130-own-your-context-building](https://github.com/circleghost/12-factor-agents/blob/main/img/130-own-your-context-building.png) -->
 
 一切都是上下文工程。[LLM 是無狀態函數](https://thedataexchange.media/baml-revolution-in-ai-engineering/)，將輸入轉換為輸出。要獲得最佳輸出，你需要給它們最佳輸入。
 
@@ -257,4 +257,4 @@ XML 風格的格式只是一個例子 - 重點是你可以建構對你的應用�
 這裡的反覆主題：我不知道什麼是最好的方法，但我知道你希望能夠嘗試一切的靈活性。
 
 
-[← 擁有你的提示](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md) | [工具只是結構化輸出 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)
+[← 擁有你的提示](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md) | [工具只是結構化輸出 →](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)

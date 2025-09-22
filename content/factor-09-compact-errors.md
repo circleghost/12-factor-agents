@@ -1,4 +1,4 @@
-[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/circleghost/12-factor-agents/blob/main/README.md)
 
 ### 9. 將錯誤壓縮到上下文視窗中
 
@@ -58,15 +58,15 @@ while True:
   }
 }
 ```
-達到某些連續錯誤閾值可能是[升級給人類](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md)的好地方，無論是透過模型決策還是透過控制流程的確定性接管。
+達到某些連續錯誤閾值可能是[升級給人類](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md)的好地方，無論是透過模型決策還是透過控制流程的確定性接管。
 
-[![195-factor-09-errors](https://github.com/humanlayer/12-factor-agents/blob/main/img/195-factor-09-errors.gif)](https://github.com/user-attachments/assets/cd7ed814-8309-4baf-81a5-9502f91d4043)
+[![195-factor-09-errors](https://github.com/circleghost/12-factor-agents/blob/main/img/195-factor-09-errors.gif)](https://github.com/user-attachments/assets/cd7ed814-8309-4baf-81a5-9502f91d4043)
 
 
 <details>
-<summary>[GIF 版本](https://github.com/humanlayer/12-factor-agents/blob/main/img/195-factor-09-errors.gif)</summary>
+<summary>[GIF 版本](https://github.com/circleghost/12-factor-agents/blob/main/img/195-factor-09-errors.gif)</summary>
 
-![195-factor-09-errors](https://github.com/humanlayer/12-factor-agents/blob/main/img/195-factor-09-errors.gif)
+![195-factor-09-errors](https://github.com/circleghost/12-factor-agents/blob/main/img/195-factor-09-errors.gif)
 
 </details>
 
@@ -77,8 +77,8 @@ while True:
 
 我確信您會發現，如果您過度使用這種方法，您的 Agent 將開始失控，並可能一遍又一遍地重複同樣的錯誤。
 
-這就是[要素 8 - 掌控您的控制流程](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)和[要素 3 - 掌控您的上下文建構](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)發揮作用的地方——您不需要只是將原始錯誤放回去，您可以完全重新構建它的表示方式，從上下文視窗中移除先前的事件，或者您發現有助於讓 Agent 重回正軌的任何確定性方法。
+這就是[要素 8 - 掌控您的控制流程](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)和[要素 3 - 掌控您的上下文建構](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)發揮作用的地方——您不需要只是將原始錯誤放回去，您可以完全重新構建它的表示方式，從上下文視窗中移除先前的事件，或者您發現有助於讓 Agent 重回正軌的任何確定性方法。
 
-但防止錯誤失控的首要方法是擁抱[要素 10 - 小型、專注的 Agent](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)。
+但防止錯誤失控的首要方法是擁抱[要素 10 - 小型、專注的 Agent](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)。
 
-[← 掌控您的控制流程](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md) | [小型專注的 Agent →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)
+[← 掌控您的控制流程](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md) | [小型專注的 Agent →](https://github.com/circleghost/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)
