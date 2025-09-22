@@ -1,11 +1,10 @@
-[← Back to README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
 
-### 9. Compact Errors into Context Window
+### 9. 將錯誤壓縮到上下文視窗中
 
-This one is a little short but is worth mentioning. One of these benefits of agents is "self-healing" - for short tasks, an LLM might call a tool that fails. Good LLMs have a fairly good chance of reading an error message or stack trace and figuring out what to change in a subsequent tool call.
+這個要素雖然簡短，但值得一提。Agent 的一個好處是「自我修復」——對於短任務，LLM 可能會呼叫一個失敗的工具。優秀的 LLM 有相當好的機會讀取錯誤訊息或堆疊追蹤，並找出在後續工具呼叫中需要更改的內容。
 
-
-Most frameworks implement this, but you can do JUST THIS without doing any of the other 11 factors. Here's an example: 
+大多數框架都實現了這一點，但您可以僅僅實現這一點，而不必執行其他 11 個要素。以下是一個例子： 
 
 
 ```python
@@ -28,7 +27,7 @@ while True:
     # loop, or do whatever else here to try to recover
 ```
 
-You may want to implement an errorCounter for a specific tool call, to limit to ~3 attempts of a single tool, or whatever other logic makes sense for your use case. 
+您可能想要為特定工具呼叫實現一個 errorCounter，將單一工具的嘗試次數限制在大約 3 次，或者其他對您的使用情境有意義的邏輯。 
 
 ```python
 consecutive_errors = 0
@@ -59,27 +58,27 @@ while True:
   }
 }
 ```
-Hitting some consecutive-error-threshold might be a great place to [escalate to a human](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md), whether by model decision or via deterministic takeover of the control flow.
+達到某些連續錯誤閾值可能是[升級給人類](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md)的好地方，無論是透過模型決策還是透過控制流程的確定性接管。
 
 [![195-factor-09-errors](https://github.com/humanlayer/12-factor-agents/blob/main/img/195-factor-09-errors.gif)](https://github.com/user-attachments/assets/cd7ed814-8309-4baf-81a5-9502f91d4043)
 
 
 <details>
-<summary>[GIF Version](https://github.com/humanlayer/12-factor-agents/blob/main/img/195-factor-09-errors.gif)</summary>
+<summary>[GIF 版本](https://github.com/humanlayer/12-factor-agents/blob/main/img/195-factor-09-errors.gif)</summary>
 
 ![195-factor-09-errors](https://github.com/humanlayer/12-factor-agents/blob/main/img/195-factor-09-errors.gif)
 
 </details>
 
-Benefits:
+好處：
 
-1. **Self-Healing**: The LLM can read the error message and figure out what to change in a subsequent tool call
-2. **Durable**: The agent can continue to run even if one tool call fails
+1. **自我修復**：LLM 可以讀取錯誤訊息並找出在後續工具呼叫中需要更改的內容
+2. **持久性**：即使一個工具呼叫失敗，Agent 仍然可以繼續執行
 
-I'm sure you will find that if you do this TOO much, your agent will start to spin out and might repeat the same error over and over again. 
+我確信您會發現，如果您過度使用這種方法，您的 Agent 將開始失控，並可能一遍又一遍地重複同樣的錯誤。
 
-That's where [factor 8 - own your control flow](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md) and [factor 3 - own your context building](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md) come in - you don't need to just put the raw error back on, you can completely restructure how it's represented, remove previous events from the context window, or whatever deterministic thing you find works to get an agent back on track. 
+這就是[要素 8 - 掌控您的控制流程](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)和[要素 3 - 掌控您的上下文建構](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)發揮作用的地方——您不需要只是將原始錯誤放回去，您可以完全重新構建它的表示方式，從上下文視窗中移除先前的事件，或者您發現有助於讓 Agent 重回正軌的任何確定性方法。
 
-But the number one way to prevent error spin-outs is to embrace [factor 10 - small, focused agents](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md).
+但防止錯誤失控的首要方法是擁抱[要素 10 - 小型、專注的 Agent](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)。
 
-[← Own Your Control Flow](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md) | [Small Focused Agents →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)
+[← 掌控您的控制流程](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md) | [小型專注的 Agent →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-10-small-focused-agents.md)
