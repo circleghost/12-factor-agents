@@ -1,16 +1,16 @@
-[← Back to README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
 
-### 1. Natural Language to Tool Calls 
+### 1. 自然語言到工具呼叫
 
-One of the most common patterns in agent building is to convert natural language to structured tool calls. This is a powerful pattern that allows you to build agents that can reason about tasks and execute them.
+在 Agent 建構中最常見的模式之一，就是將自然語言轉換為結構化的工具呼叫。這是一個強大的模式，讓你能夠建構可以對任務進行推理和執行的 Agent。
 
 ![110-natural-language-tool-calls](https://github.com/humanlayer/12-factor-agents/blob/main/img/110-natural-language-tool-calls.png)
 
-This pattern, when applied atomically, is the simple translation of a phrase like
+這個模式在原子化應用時，就是將這樣的語句進行簡單轉換：
 
-> can you create a payment link for $750 to Terri for sponsoring the february AI tinkerers meetup? 
+> 你能為 Terri 贊助二月 AI 愛好者聚會建立一個 $750 的付款連結嗎？
 
-to a structured object that describes a Stripe API call like
+轉換為描述 Stripe API 呼叫的結構化物件：
 
 ```json
 {
@@ -28,35 +28,35 @@ to a structured object that describes a Stripe API call like
 }
 ```
 
-**Note**: in reality the stripe API is a bit more complex, a [real agent that does this](https://github.com/dexhorthy/mailcrew) ([video](https://www.youtube.com/watch?v=f_cKnoPC_Oo)) would list customers, list products, list prices, etc to build this payload with the proper ids, or include those ids in the prompt/context window (we'll see below how those are kinda the same thing though!)
+**注意**：實際上 Stripe API 要更複雜一些，一個[真正做這件事的 Agent](https://github.com/dexhorthy/mailcrew) ([影片](https://www.youtube.com/watch?v=f_cKnoPC_Oo)) 會列出客戶、列出產品、列出價格等，以使用正確的 ID 建構這個有效載荷，或者在提示/上下文視窗中包含這些 ID (我們稍後會看到這些其實是同一件事！)
 
-From there, deterministic code can pick up the payload and do something with it. (More on this in [factor 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md))
+從這裡開始，確定性程式碼可以接收有效載荷並對其進行處理。(更多內容請參見[要素 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md))
 
 ```python
-# The LLM takes natural language and returns a structured object
+# LLM 接收自然語言並返回結構化物件
 nextStep = await llm.determineNextStep(
   """
-  create a payment link for $750 to Jeff 
-  for sponsoring the february AI tinkerers meetup
+  為 Jeff 建立一個 $750 的付款連結
+  用於贊助二月 AI 愛好者聚會
   """
   )
 
-# Handle the structured output based on its function
+# 根據函數處理結構化輸出
 if nextStep.function == 'create_payment_link':
     stripe.paymentlinks.create(nextStep.parameters)
-    return  # or whatever you want, see below
+    return  # 或者你想要的任何操作，見下文
 elif nextStep.function == 'something_else':
-    # ... more cases
+    # ... 更多情況
     pass
-else:  # the model didn't call a tool we know about
-    # do something else
+else:  # 模型沒有呼叫我們知道的工具
+    # 做其他事情
     pass
 ```
 
-**NOTE**: While a full agent would then receive the API call result and loop with it, eventually returning something like
+**注意**：雖然完整的 Agent 會接收 API 呼叫結果並循環處理，最終返回類似這樣的內容：
 
-> I've successfully created a payment link for $750 to Terri for sponsoring the february AI tinkerers meetup. Here's the link: https://buy.stripe.com/test_1234567890
+> 我已經成功為 Terri 贊助二月 AI 愛好者聚會建立了一個 $750 的付款連結。這是連結：https://buy.stripe.com/test_1234567890
 
-**Instead**, We're actually going to skip that step here, and save it for another factor, which you may or may not want to also incorporate (up to you!)
+**但是**，我們實際上會跳過這個步驟，把它留給另一個要素，你可以選擇是否也要包含這個步驟 (由你決定！)
 
-[← How We Got Here](https://github.com/humanlayer/12-factor-agents/blob/main/content/brief-history-of-software.md) | [Own Your Prompts →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md)
+[← 我們如何到達這裡](https://github.com/humanlayer/12-factor-agents/blob/main/content/brief-history-of-software.md) | [擁有你的提示 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md)

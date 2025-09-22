@@ -1,40 +1,40 @@
-[← Back to README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 回到 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
 
-### 3. Own your context window
+### 3. 擁有你的上下文視窗
 
-You don't necessarily need to use standard message-based formats for conveying context to an LLM.
+你不一定需要使用標準的基於訊息的格式來向 LLM 傳達上下文。
 
-> #### At any given point, your input to an LLM in an agent is "here's what's happened so far, what's the next step"
+> #### 在任何給定的時刻，你對 Agent 中 LLM 的輸入就是「到目前為止發生了什麼，下一步是什麼」
 
 <!-- todo syntax highlighting -->
 <!-- ![130-own-your-context-building](https://github.com/humanlayer/12-factor-agents/blob/main/img/130-own-your-context-building.png) -->
 
-Everything is context engineering. [LLMs are stateless functions](https://thedataexchange.media/baml-revolution-in-ai-engineering/) that turn inputs into outputs. To get the best outputs, you need to give them the best inputs.
+一切都是上下文工程。[LLM 是無狀態函數](https://thedataexchange.media/baml-revolution-in-ai-engineering/)，將輸入轉換為輸出。要獲得最佳輸出，你需要給它們最佳輸入。
 
-Creating great context means:
+建立優秀的上下文意味著：
 
-- The prompt and instructions you give to the model
-- Any documents or external data you retrieve (e.g. RAG)
-- Any past state, tool calls, results, or other history 
-- Any past messages or events from related but separate histories/conversations (Memory)
-- Instructions about what sorts of structured data to output
+- 你給模型的提示和指令
+- 你檢索的任何文件或外部資料 (例如 RAG)
+- 任何過去的狀態、工具呼叫、結果或其他歷史記錄
+- 來自相關但獨立的歷史記錄/對話的任何過去訊息或事件 (記憶)
+- 關於要輸出什麼種類結構化資料的指令
 
 ![image](https://github.com/user-attachments/assets/0f1f193f-8e94-4044-a276-576bd7764fd0)
 
 
-### on context engineering
+### 關於上下文工程
 
-This guide is all about getting as much as possible out of today's models. Notably not mentioned are:
+本指南全部是關於從今天的模型中獲得盡可能多的價值。值得注意的是，沒有提到的包括：
 
-- Changes to models parameters like temperature, top_p, frequency_penalty, presence_penalty, etc.
-- Training your own completion or embedding models
-- Fine-tuning existing models
+- 修改模型參數，如 temperature、top_p、frequency_penalty、presence_penalty 等
+- 訓練你自己的完成或嵌入模型
+- 微調現有模型
 
-Again, I don't know what's the best way to hand context to an LLM, but I know you want the flexibility to be able to try EVERYTHING.
+再次強調，我不知道向 LLM 傳遞上下文的最佳方式是什麼，但我知道你希望能夠嘗試一切的靈活性。
 
-#### Standard vs Custom Context Formats
+#### 標準 vs 自訂上下文格式
 
-Most LLM clients use a standard message-based format like this:
+大多數 LLM 客戶端使用這樣的標準基於訊息的格式：
 
 ```yaml
 [
@@ -66,11 +66,11 @@ Most LLM clients use a standard message-based format like this:
 ]
 ```
 
-While this works great for most use cases, if you want to really get THE MOST out of today's LLMs, you need to get your context into the LLM in the most token- and attention-efficient way you can.
+雖然這對大多數使用案例都很好用，但如果你想真正從今天的 LLM 中獲得最大收益，你需要以最有效的標記和注意力方式將你的上下文輸入到 LLM 中。
 
-As an alternative to the standard message-based format, you can build your own context format that's optimized for your use case. For example, you can use custom objects and pack/spread them into one or more user, system, assistant, or tool messages as makes sense.
+作為標準基於訊息格式的替代方案，你可以建構針對你的使用案例最佳化的自己的上下文格式。例如，你可以使用自訂物件並將它們打包/展開到一個或多個使用者、系統、助理或工具訊息中，視情況而定。
 
-Here's an example of putting the whole context window into a single user message:
+這是將整個上下文視窗放入單一使用者訊息的例子：
 ```yaml
 
 [
@@ -111,11 +111,11 @@ Here's an example of putting the whole context window into a single user message
 ]
 ```
 
-The model may infer that you're asking it `what's the next step` by the tool schemas you supply, but it never hurts to roll it into your prompt template.
+模型可能會根據你提供的工具架構推斷出你在問它「下一步是什麼」，但將其納入你的提示模板中永遠不會有害。
 
-### code example
+### 程式碼範例
 
-We can build this with something like: 
+我們可以用類似這樣的方式來建構：
 
 ```python
 
@@ -123,7 +123,7 @@ class Thread:
   events: List[Event]
 
 class Event:
-  # could just use string, or could be explicit - up to you
+  # 可以只使用字串，或者可以明確 - 由你決定
   type: Literal["list_git_tags", "deploy_backend", "deploy_frontend", "request_more_information", "done_for_now", "list_git_tags_result", "deploy_backend_result", "deploy_frontend_result", "request_more_information_result", "done_for_now_result", "error"]
   data: ListGitTags | DeployBackend | DeployFrontend | RequestMoreInformation |  
         ListGitTagsResult | DeployBackendResult | DeployFrontendResult | RequestMoreInformationResult | string
@@ -139,11 +139,11 @@ def thread_to_prompt(thread: Thread) -> str:
   return '\n\n'.join(event_to_prompt(event) for event in thread.events)
 ```
 
-#### Example Context Windows
+#### 上下文視窗範例
 
-Here's how context windows might look with this approach:
+使用這種方法，上下文視窗可能會是這樣的：
 
-**Initial Slack Request:**
+**初始 Slack 請求：**
 ```xml
 <slack_message>
     From: @alex
@@ -152,7 +152,7 @@ Here's how context windows might look with this approach:
 </slack_message>
 ```
 
-**After Listing Git Tags:**
+**列出 Git 標籤之後：**
 ```xml
 <slack_message>
     From: @alex
@@ -179,7 +179,7 @@ Here's how context windows might look with this approach:
 </list_git_tags_result>
 ```
 
-**After Error and Recovery:**
+**錯誤和恢復之後：**
 ```xml
 <slack_message>
     From: @alex
@@ -209,7 +209,7 @@ Here's how context windows might look with this approach:
 </human_response>
 ```
 
-From here your next step might be: 
+從這裡開始，你的下一步可能是： 
 
 ```python
 nextStep = await determine_next_step(thread_to_prompt(thread))
@@ -222,39 +222,39 @@ nextStep = await determine_next_step(thread_to_prompt(thread))
 }
 ```
 
-The XML-style format is just one example - the point is you can build your own format that makes sense for your application. You'll get better quality if you have the flexibility to experiment with different context structures and what you store vs. what you pass to the LLM. 
+XML 風格的格式只是一個例子 - 重點是你可以建構對你的應用程式有意義的自己的格式。如果你有靈活性來實驗不同的上下文結構以及你儲存什麼 vs. 你傳遞給 LLM 什麼，你會獲得更好的品質。
 
-Key benefits of owning your context window:
+擁有你的上下文視窗的主要好處：
 
-1. **Information Density**: Structure information in ways that maximize the LLM's understanding
-2. **Error Handling**: Include error information in a format that helps the LLM recover. Consider hiding errors and failed calls from context window once they are resolved.
-3. **Safety**: Control what information gets passed to the LLM, filtering out sensitive data
-4. **Flexibility**: Adapt the format as you learn what works best for your use case
-5. **Token Efficiency**: Optimize context format for token efficiency and LLM understanding
+1. **資訊密度**：以最大化 LLM 理解的方式結構化資訊
+2. **錯誤處理**：以幫助 LLM 恢復的格式包含錯誤資訊。考慮在錯誤和失敗呼叫解決後從上下文視窗中隱藏它們。
+3. **安全性**：控制傳遞給 LLM 的資訊，過濾敏感資料
+4. **靈活性**：隨著你了解什麼對你的使用案例最有效而調整格式
+5. **標記效率**：為標記效率和 LLM 理解最佳化上下文格式
 
-Context includes: prompts, instructions, RAG documents, history, tool calls, memory
+上下文包括：提示、指令、RAG 文件、歷史記錄、工具呼叫、記憶
 
 
-Remember: The context window is your primary interface with the LLM. Taking control of how you structure and present information can dramatically improve your agent's performance.
+記住：上下文視窗是你與 LLM 的主要介面。控制你如何結構化和呈現資訊可以顯著提升你的 Agent 性能。
 
-Example - information density - same message, fewer tokens:
+範例 - 資訊密度 - 相同訊息，更少標記：
 
 ![Loom Screenshot 2025-04-22 at 09 00 56](https://github.com/user-attachments/assets/5cf041c6-72da-4943-be8a-99c73162b12a)
 
 
-### Don't take it from me
+### 不要相信我的話
 
-About 2 months after 12-factor agents was published, context engineering started to become a pretty popular term.
+十二要素 Agent 發布約 2 個月後，上下文工程開始成為一個相當流行的術語。
 
 <a href="https://x.com/karpathy/status/1937902205765607626"><img width="378" alt="Screenshot 2025-06-25 at 4 11 45 PM" src="https://github.com/user-attachments/assets/97e6e667-c35f-4855-8233-af40f05d6bce" /></a> <a href="https://x.com/tobi/status/1935533422589399127"><img width="378" alt="Screenshot 2025-06-25 at 4 12 59 PM" src="https://github.com/user-attachments/assets/7e6f5738-0d38-4910-82d1-7f5785b82b99" /></a>
 
-There's also a quite good [Context Engineering Cheat Sheet](https://x.com/lenadroid/status/1943685060785524824) from [@lenadroid](https://x.com/lenadroid) from July 2025.
+還有一個相當不錯的 [上下文工程速查表](https://x.com/lenadroid/status/1943685060785524824)，來自 [@lenadroid](https://x.com/lenadroid)，發布於 2025 年 7 月。
 
 <a href="https://x.com/lenadroid/status/1943685060785524824"><img width="256" alt="image" src="https://github.com/user-attachments/assets/cac88aa3-8faf-440b-9736-cab95a9de477" /></a>
 
 
 
-Recurring theme here: I don't know what's the best approach, but I know you want the flexibility to be able to try EVERYTHING.
+這裡的反覆主題：我不知道什麼是最好的方法，但我知道你希望能夠嘗試一切的靈活性。
 
 
-[← Own Your Prompts](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md) | [Tools Are Structured Outputs →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)
+[← 擁有你的提示](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md) | [工具只是結構化輸出 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)
