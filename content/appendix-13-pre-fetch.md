@@ -1,18 +1,18 @@
-### Factor 13 - pre-fetch all the context you might need
+### 要素 13 - 預先獲取你可能需要的所有上下文
 
-If there's a high chance that your model will call tool X, don't waste token round trips telling the model to fetch it, that is, instead of a pseudo-prompt like:
+如果你的模型很可能會呼叫工具 X，就不要浪費 token 來回告訴模型去獲取它，也就是說，不要像這樣的偽提示：
 
 ```jinja
-When looking at deployments, you will likely want to fetch the list of published git tags,
-so you can use it to deploy to prod.
+在查看部署時，你可能會想要獲取已發布的 git 標籤列表，
+這樣你就可以用它來部署到生產環境。
 
-Here's what happened so far:
+迴今為止發生的事情：
 
 {{ thread.events }}
 
-What's the next step?
+下一步是什麼？
 
-Answer in JSON format with one of the following intents:
+用 JSON 格式回答，使用以下意圖之一：
 
 {
   intent: 'deploy_backend_to_prod',
@@ -25,7 +25,7 @@ Answer in JSON format with one of the following intents:
 }
 ```
 
-and your code looks like
+而你的程式碼看起來像這樣
 
 ```python
 thread = {"events": [initial_message]}
@@ -51,24 +51,24 @@ while True:
     # ...
 ```
 
-You might as well just fetch the tags and include them in the context window, like:
+你不如直接獲取標籤並將它們包含在上下文視窗中，像這樣：
 
 ```diff
-- When looking at deployments, you will likely want to fetch the list of published git tags,
-- so you can use it to deploy to prod.
+- 在查看部署時，你可能會想要獲取已發布的 git 標籤列表，
+- 這樣你就可以用它來部署到生產環境。
 
-+ The current git tags are:
++ 目前的 git 標籤是：
 
 + {{ git_tags }}
 
 
-Here's what happened so far:
+迴今為止發生的事情：
 
 {{ thread.events }}
 
-What's the next step?
+下一步是什麼？
 
-Answer in JSON format with one of the following intents:
+用 JSON 格式回答，使用以下意圖之一：
 
 {
   intent: 'deploy_backend_to_prod',
@@ -82,7 +82,7 @@ Answer in JSON format with one of the following intents:
 
 ```
 
-and your code looks like
+而你的程式碼看起來像這樣
 
 ```diff
 thread = {"events": [initial_message]}
@@ -111,18 +111,18 @@ while True:
     # ...
 ```
 
-or even just include the tags in the thread and remove the specific parameter from your prompt template:
+或者更簡單地將標籤包含在執緒中，並從你的提示模板中移除特定參數：
 
 ```diff
 thread = {"events": [initial_message]}
-+ # add the request
++ # 新增請求
 + thread["events"].append({
 +  "type": 'list_git_tags',
 + })
 
 git_tags = await fetch_git_tags()
 
-+ # add the result
++ # 新增結果
 + thread["events"].append({
 +  "type": 'list_git_tags_result',
 +  "data": git_tags,
@@ -142,10 +142,10 @@ while True:
     # ...
 ```
 
-Overall:
+總的來說：
 
-> #### If you already know what tools you'll want the model to call, just call them DETERMINISTICALLY and let the model do the hard part of figuring out how to use their outputs
+> #### 如果你已經知道你希望模型呼叫哪些工具，就直接確定性地呼叫它們，讓模型做困難的部分：弄清楚如何使用它們的輸出
 
-Again, AI engineering is all about [Context Engineering](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md).
+再次強調，AI 工程完全關乎[上下文工程](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)。
 
-[← Stateless Reducer](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-12-stateless-reducer.md) | [Further Reading →](https://github.com/humanlayer/12-factor-agents/blob/main/README.md#related-resources)
+[← 無狀態化簡器](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-12-stateless-reducer.md) | [延伸閱讀 →](https://github.com/humanlayer/12-factor-agents/blob/main/README.md#related-resources)
