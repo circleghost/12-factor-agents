@@ -18,7 +18,7 @@ Deep Dive"></a>
 
 <p></p>
 
-*秉承 [十二要素應用程式](https://12factor.net/) 的精神*。*本專案的原始碼公開在 https://github.com/circleghost/12-factor-agents，我歡迎你的回饋和貢獻。讓我們一起探索這個領域！*
+*秉承 [十二要素應用程式](https://12factor.net/) 的精神*。*本專案的原始碼公開在 https://github.com/circleghost/12-factor-agents ，歡迎你的回饋和貢獻。讓我們一起探索這個領域！*
 
 > [!TIP]
 > 錯過了 AI Engineer World's Fair？[觀看演講錄影](https://www.youtube.com/watch?v=8kMaTybvDUw)
